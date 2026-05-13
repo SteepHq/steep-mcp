@@ -1,0 +1,55 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  manifests:
+    name: Manifest schema validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+
+      - name: Install check-jsonschema
+        run: pip install --quiet check-jsonschema
+
+      - name: Validate .claude-plugin/plugin.json
+        run: |
+          check-jsonschema \
+            --schemafile https://www.schemastore.org/claude-code-plugin-manifest.json \
+            .claude-plugin/plugin.json
+
+      - name: Validate .cursor-plugin/plugin.json
+        run: |
+          check-jsonschema \
+            --schemafile https://raw.githubusercontent.com/cursor/plugins/main/schemas/plugin.schema.json \
+            .cursor-plugin/plugin.json
+
+      - name: Validate server.json
+        run: |
+          check-jsonschema \
+            --schemafile https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json \
+            server.json
+
+  secret-scan:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2.3.9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

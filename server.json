@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "app.steep/mcp",
+  "description": "Query metrics, targets, entities, and team data in your Steep workspace via MCP.",
+  "version": "1.0.0",
+  "websiteUrl": "https://steep.app",
+  "repository": {
+    "url": "https://github.com/SteepHq/steep-mcp",
+    "source": "github",
+    "id": "1237691519"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.steep.app/mcp"
+    }
+  ]
+}
