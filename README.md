@@ -28,45 +28,30 @@ Before setting up the Steep MCP server, ensure you have:
 
 ## Installation
 
-Choose the installation method for your client:
+### Claude Code & Cowork
 
-### Claude Code
+Install from the [community plugin marketplace](https://github.com/anthropics/claude-plugins-community):
 
-If you're using Claude Code CLI, you can install this as a plugin by cloning
-it locally:
+```bash
+/plugin marketplace add anthropics/claude-plugins-community
+/plugin install steep@claude-community
+```
+
+Alternatively, install directly from this repo:
 
 ```bash
 git clone https://github.com/SteepHq/steep-mcp.git
-cd steep-mcp
-claude --plugin-dir ./
+claude --plugin-dir ./steep-mcp
 ```
 
-The Steep MCP server will be automatically configured when the plugin loads.
-You will be prompted to authenticate into your Steep workspace via OAuth.
-
-The Claude plugin uses the following MCP configuration (`.mcp.json`):
-
-```json
-{
-  "mcpServers": {
-    "steep": {
-      "type": "http",
-      "url": "https://mcp.steep.app/mcp"
-    }
-  }
-}
-```
-
-Claude Code discovers the OAuth authorization server via the resource
-metadata at `https://mcp.steep.app/.well-known/oauth-protected-resource` and
-registers itself dynamically — no client ID needs to be configured.
+Either path loads `.claude-plugin/plugin.json` and the sibling `.mcp.json`, configures the Steep MCP server, and prompts you to authenticate via OAuth.
+No client ID is needed — Claude Code discovers the auth server and registers itself dynamically.
 
 ### Cursor
 
-Open **Cursor → Settings → Cursor Settings** (or use the keyboard shortcut
-`Cmd+,` on macOS, `Ctrl+,` on Windows/Linux) and navigate to the **MCP** tab.
+Install with one click from the [Cursor plugin marketplace](https://cursor.com/en-US/marketplace).
 
-Add the following configuration to connect to the remote Steep MCP server:
+Alternatively, add Steep manually: **Cursor → Settings → MCP** and paste:
 
 ```json
 {
@@ -78,8 +63,12 @@ Add the following configuration to connect to the remote Steep MCP server:
 }
 ```
 
-Save the configuration. A connect button will appear once the entry is added;
-click it to authenticate into your Steep workspace.
+Save the configuration, then click the connect button to authenticate via OAuth.
+
+### Other MCP clients
+
+Point your client at `https://mcp.steep.app/mcp` (Streamable HTTP transport). Clients supporting
+Dynamic Client Registration (RFC 7591) will register automatically.
 
 ## Usage Examples
 
@@ -92,18 +81,22 @@ natural language:
 - **Explore the data model**: "Which entities slice the customer count metric?"
 - **Find people**: "Who's on the growth team in Steep?"
 
-## Documentation & Resources
+## Updates
+
+Marketplace installs (Claude Code, Cursor) auto-update when we publish a new version. Run `/plugin update steep` in Claude Code to pull the latest.
+
+Cursor handles updates through its own marketplace UI. Users who installed manually via `--plugin-dir` or by editing `mcp.json` directly will keep using whatever revision they cloned — re-clone or re-paste to get changes.
+
+## Documentation & resources
 
 - [Steep documentation](https://help.steep.app)
 - [Steep privacy policy](https://steep.app/privacy)
 - [Model Context Protocol specification](https://modelcontextprotocol.io)
 
-## Notes & Limitations
+## Notes & limitations
 
 - **Remote server only**: this configuration connects to Steep's hosted MCP
   server. No local installation is required or supported.
-- **Read-only**: every tool is read-only; the MCP server cannot modify metrics,
-  targets, or any other workspace state.
 - **Workspace scope**: you can only access data your Steep user account
   already has access to. OAuth scopes are limited to the read scopes the
   server advertises at `/.well-known/oauth-protected-resource`.
