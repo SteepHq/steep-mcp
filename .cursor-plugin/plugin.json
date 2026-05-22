@@ -1,0 +1,22 @@
+{
+  "name": "steep",
+  "displayName": "Steep",
+  "description": "Connect Cursor to your Steep workspace — query metrics, targets, entities, and team data via the Model Context Protocol.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Steep"
+  },
+  "publisher": "steep",
+  "homepage": "https://steep.app",
+  "repository": "https://github.com/SteepHq/steep-mcp",
+  "license": "Apache-2.0",
+  "logo": "assets/avatar.png",
+  "category": "analytics",
+  "keywords": ["analytics", "metrics", "data", "semantic-layer", "bi"],
+  "tags": ["data", "analytics", "remote-server", "read-only", "metrics"],
+  "mcpServers": {
+    "steep": {
+      "url": "https://mcp.steep.app/mcp"
+    }
+  }
+}
