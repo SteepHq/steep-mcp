@@ -27,3 +27,4 @@ out/
 # Local scratch
 .scratch/
 tmp/
+.claude/settings.local.json
