@@ -15,5 +15,12 @@
       "type": "streamable-http",
       "url": "https://mcp.steep.app/mcp"
     }
+  ],
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/SteepHq/steep-mcp/main/assets/avatar.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
   ]
 }
