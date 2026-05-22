@@ -16,7 +16,6 @@
   "tags": ["data", "analytics", "remote-server", "read-only", "metrics"],
   "mcpServers": {
     "steep": {
-      "type": "http",
       "url": "https://mcp.steep.app/mcp"
     }
   }
