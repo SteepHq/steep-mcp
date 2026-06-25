@@ -1,0 +1,46 @@
+{
+  "name": "steep",
+  "version": "1.0.0",
+  "description": "Query your governed Steep metrics, targets, and entities — and create reports — from Codex.",
+  "author": {
+    "name": "Steep",
+    "url": "https://steep.app"
+  },
+  "homepage": "https://steep.app",
+  "repository": "https://github.com/SteepHq/steep-mcp",
+  "license": "Apache-2.0",
+  "keywords": [
+    "analytics",
+    "metrics",
+    "data",
+    "semantic-layer",
+    "bi",
+    "reports"
+  ],
+  "skills": "./skills/",
+  "apps": "./.app.json",
+  "interface": {
+    "displayName": "Steep",
+    "shortDescription": "Query your governed metrics and reports",
+    "longDescription": "Connect Codex to your Steep workspace. Query metrics over any date range with breakdowns, track targets, explore entities and modules, and create reports — all from the same governed semantic layer that powers Steep, so answers match the rest of your organization.",
+    "developerName": "Steep",
+    "category": "Data & Analytics",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://steep.app",
+    "privacyPolicyURL": "https://steep.app/privacy",
+    "termsOfServiceURL": "https://steep.app/terms",
+    "brandColor": "#0B0B0B",
+    "defaultPrompt": [
+      "List the metrics in my Steep workspace",
+      "Show ARR for the last 6 months, broken down by plan",
+      "How are we tracking against our Q2 revenue target?",
+      "Create a report summarizing active users this quarter"
+    ],
+    "screenshots": [],
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png"
+  }
+}

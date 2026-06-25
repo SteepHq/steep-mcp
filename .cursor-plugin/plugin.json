@@ -13,7 +13,7 @@
   "logo": "assets/avatar.png",
   "category": "analytics",
   "keywords": ["analytics", "metrics", "data", "semantic-layer", "bi"],
-  "tags": ["data", "analytics", "remote-server", "read-only", "metrics"],
+  "tags": ["data", "analytics", "remote-server", "metrics", "reports"],
   "mcpServers": {
     "steep": {
       "url": "https://mcp.steep.app/mcp"
