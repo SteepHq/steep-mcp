@@ -32,7 +32,7 @@
     "websiteURL": "https://steep.app",
     "privacyPolicyURL": "https://steep.app/privacy",
     "termsOfServiceURL": "https://steep.app/terms",
-    "brandColor": "#0B0B0B",
+    "brandColor": "#191919",
     "defaultPrompt": [
       "List the metrics in my Steep workspace",
       "Show ARR for the last 6 months, broken down by plan",
