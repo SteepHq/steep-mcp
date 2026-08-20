@@ -22,10 +22,12 @@ submission.
 
 ## Good-faith reporting
 
-Steep will not pursue legal action against reporters who contact us in good
-faith via security@steep.app, avoid privacy violations, data destruction, and
-service disruption, and do not publicly disclose the issue before Steep has
-had a reasonable opportunity to review it.
+Steep will not pursue legal action against reporters who:
+
+- contact us in good faith via [security@steep.app](mailto:security@steep.app)
+- avoid privacy violations, data destruction, and service disruption
+- do not publicly disclose the issue before Steep has had a reasonable
+  opportunity to review it
 
 For Steep’s broader security practices, see
 [https://steep.app/security](https://steep.app/security).
