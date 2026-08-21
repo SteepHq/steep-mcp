@@ -3,33 +3,31 @@
 ## Reporting a vulnerability
 
 If you believe you have found a security vulnerability in the Steep MCP
-server, the manifests in this repository, or related Steep infrastructure,
-please report it privately to [security@steep.app](mailto:security@steep.app).
-
-Please include:
-
-- A description of the issue and its impact
-- Steps to reproduce
-- Any proof-of-concept or affected versions
+server, the manifests in this repository, related Steep infrastructure, or
+the Steep product, please report it privately to
+[security@steep.app](mailto:security@steep.app). Include a brief description
+of the issue, its potential impact, and steps to reproduce if available.
 
 Do not file a public GitHub issue for security reports.
 
-## Scope
+## No bug bounty
 
-In scope:
+Steep does not operate a bug bounty program and does not offer compensation
+for vulnerability reports.
 
-- The Steep MCP server (hosted at the production HTTPS endpoint)
-- The OAuth flow used to authorize MCP clients
-- Manifests in this repository
+## How we handle reports
 
-Out of scope:
+Reports are reviewed at Steep’s discretion. Steep may not acknowledge every
+submission.
 
-- Issues in the Steep product unrelated to MCP — report those through
-  [help@steep.app](mailto:help@steep.app) instead.
+## Good-faith reporting
 
-## Response
+Steep will not pursue legal action against reporters who:
 
-We aim to acknowledge reports within two business days and provide a fix or
-mitigation timeline within two weeks for confirmed issues. Reporters who
-follow this policy will not be subject to legal action by Steep for good-faith
-research.
+- contact us in good faith via [security@steep.app](mailto:security@steep.app)
+- avoid privacy violations, data destruction, and service disruption
+- do not publicly disclose the issue before Steep has had a reasonable
+  opportunity to review it
+
+For Steep’s broader security practices, see
+[https://steep.app/security](https://steep.app/security).
